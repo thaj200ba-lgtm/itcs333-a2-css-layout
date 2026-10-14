@@ -1,7 +1,136 @@
-/* ITCS333 A2 starter — implement the design spec from index.html here.
-   See README rubric for the graded checks. Do not use inline styles. */
+/* ===== 1. Base ===== */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  color: #222222;
+  background-color: #f5f6f8;
+}
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 16px;
+}
 
-/* TODO: style #site-header (padding, border-bottom) */
-/* TODO: style .card (padding, border, gap) and .card-grid (display, gap, 3 columns) */
-/* TODO: style form inputs (padding) and a :focus state */
-/* TODO: add a @media (max-width: 700px) query collapsing .card-grid to one column */
+/* ===== 2. Header (id selector + box model) ===== */
+#site-header {
+  padding: 16px 24px;
+  border-bottom: 3px solid #1e3a8a;
+  margin-bottom: 16px;
+  background-color: #ffffff;
+}
+#site-header h1 {
+  margin: 0 0 8px;
+  font-size: 1.6rem;
+}
+
+/* ===== 3. Navigation (descendant + pseudo-class) ===== */
+.main-nav a {
+  margin-right: 16px;
+  color: #1e3a8a;
+  text-decoration: none;
+  font-weight: bold;
+}
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+/* ===== 4. Sections + Table ===== */
+.content-section {
+  margin-bottom: 32px;
+}
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+}
+.schedule-table th,
+.schedule-table td {
+  padding: 10px;
+  border: 1px solid #cccccc;
+  text-align: left;
+}
+.schedule-table th {
+  background-color: #1e3a8a;
+  color: #ffffff;
+}
+.schedule-table tbody tr:hover {
+  background-color: #eef2ff;
+}
+
+/* ===== 5. Card grid ===== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.card {
+  padding: 16px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+.card h3 {
+  margin: 0 0 8px;
+}
+.card .weight {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e3a8a;
+}
+
+/* ===== 6. Form ===== */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 400px;
+}
+.register-form label {
+  font-weight: bold;
+}
+.register-form input {
+  padding: 8px;
+  border: 1px solid #999999;
+  border-radius: 4px;
+  font: inherit;
+}
+.register-form input:focus {
+  outline: none;
+  border-color: #1e3a8a;
+  box-shadow: 0 0 0 3px #c7d2fe;
+}
+.btn-primary {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #1e3a8a;
+  color: #ffffff;
+  font: inherit;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background-color: #172c6b;
+}
+.btn-primary:focus {
+  outline: 3px solid #c7d2fe;
+}
+
+/* ===== 7. Footer ===== */
+.site-footer {
+  padding: 16px;
+  border-top: 1px solid #cccccc;
+  text-align: center;
+  color: #555555;
+}
+
+/* ===== 8. Responsive (must stay LAST) ===== */
+@media (max-width: 700px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
