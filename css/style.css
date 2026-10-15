@@ -14,7 +14,6 @@ main {
   margin: 0 auto;
   padding: 16px;
 }
-
 /* ===== 2. Header (id selector + box model) ===== */
 #site-header {
   padding: 16px 24px;
